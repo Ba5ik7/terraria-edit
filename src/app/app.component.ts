@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'terraria-edit';
+
+  renderMap(){
+    console.log('Hello World')
+  }
 }
