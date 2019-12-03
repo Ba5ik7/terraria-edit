@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WorldParserService } from './services/world-parser.service';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'terraria-edit';
+  title = 'Terraria Edit';
+  worldParser: WorldParserService;
+  file: Blob;
 
-  renderMap(){
-    console.log('Hello World')
+  constructor() {
+    this.worldParser = new WorldParserService;
+  }
+
+  renderMap() {
+    this.worldParser.loadFile(this.file);
+  }
+
+  inputFileChange(event) {
+    this.file = event.target.files[0];
   }
 }
