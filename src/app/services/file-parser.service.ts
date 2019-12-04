@@ -88,6 +88,7 @@ export class FileParserService {
       this.offset.value = offset;
   }
 
+  //stolen from https://github.com/google/closure-library/blob/e877b1eac410c0d842bcda118689759512e0e26f/closure/goog/crypt/crypt.js
   utf8ByteArrayToString(bytes) {
     var out = [], pos = 0, c = 0;
     while (pos < bytes.length) {
